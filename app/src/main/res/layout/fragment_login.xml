@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#33548f"
+    android:padding="30dp"
+    tools:context=".login">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#568970"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Login"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_email"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:startIconTint="#22154c">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etlogin"
+                    android:layout_width="260dp"
+                    android:layout_height="58dp"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/black">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Login"
+                android:hint="enter the password"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/black"
+                app:startIconTint="#22154c">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etpassword"
+                    android:layout_width="287dp"
+                    android:layout_height="45dp"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#753a88"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:id="@+id/btn"
+                android:fontFamily="sans-serif-black"
+                android:textStyle="bold"
+                android:layout_below="@+id/password"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ggle"
+                android:backgroundTint="#2035"
+                android:textStyle="italic"
+                android:text="Google Sign In"
+                android:layout_below="@+id/btn"/>
+
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ggleb"
+                    android:visibility="gone"
+                    android:foregroundGravity="bottom"
+                    >
+
+                </ProgressBar>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
+
+
+</ScrollView>
