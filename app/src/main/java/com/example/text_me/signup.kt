@@ -82,6 +82,8 @@ class signup : Fragment() {
                 val obj = mutableMapOf<String, String>()
                 obj["user email"] = eml
                 obj["user password"] = pass
+                obj["name"]=""
+                obj["status"]=""
                 db.set(obj).addOnSuccessListener {
                     Log.d("on success", "Account created Successfully")
 

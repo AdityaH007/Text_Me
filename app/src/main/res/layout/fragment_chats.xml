@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:text="chats section" />
+        android:text="YOUR CHATS WILL APPEAR HERE"
+        android:textColor="@color/black"
+        />
 
 </FrameLayout>

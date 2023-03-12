@@ -15,7 +15,8 @@ class menuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-        window.addFlags(FLAG_KEEP_SCREEN_ON)
+        window.addFlags(
+            FLAG_KEEP_SCREEN_ON)
         toolbar=findViewById(R.id.tblr)
         frameLayout=findViewById(R.id.framelyt)
         if (intent!=null)
@@ -35,6 +36,11 @@ class menuActivity : AppCompatActivity() {
                 }
                 "Logout"->{
 
+                }
+                "contacts"-> {
+                    supportFragmentManager.beginTransaction().replace(R.id.framelyt, contact())
+                        .commit()
+                    toolbar.title = "contact"
                 }
             }
         }

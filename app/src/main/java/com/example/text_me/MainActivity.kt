@@ -15,6 +15,7 @@ import androidx.viewpager.widget.PagerTitleStrip
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var appPagerAdapter: AppPagerAdapter1
     private lateinit var auth:FirebaseAuth
+    private lateinit var showcontacts:FloatingActionButton
     private var titles= arrayListOf("chats","status","calls")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         tabLayout=findViewById(R.id.tlayout)
         auth= FirebaseAuth.getInstance()
         toolbar=findViewById(R.id.tbar)
+        showcontacts=findViewById(R.id.contacts)
         toolbar.title="text me"
         setSupportActionBar(toolbar)
         appPagerAdapter= AppPagerAdapter1(fragmentActivity = this)
@@ -49,6 +52,11 @@ class MainActivity : AppCompatActivity() {
 
 
         }.attach()
+        showcontacts.setOnClickListener {
+            val intent=Intent(this,menuActivity::class.java)
+            intent.putExtra("OptionName","Contact")
+            startActivity(intent)
+        }
     }
     class AppPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity) {
         override fun getItemCount(): Int {
